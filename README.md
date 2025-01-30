@@ -1,13 +1,34 @@
+# Chill Pets
 
-### Explicación:
+**Chill Pets** es una página web para la venta de productos para mascotas. Ofrece un catálogo de productos, una pasarela de pagos para realizar compras y un sistema de gestión de inventario (stock). La plataforma cuenta con dos tipos de usuarios: **Administrador** y **Usuario**. El Administrador tiene permisos para gestionar productos, precios y stock, mientras que el Usuario puede navegar por el catálogo, realizar compras y gestionar su perfil.
 
-1. **Introducción**: Breve descripción de lo que hace la aplicación.
-2. **Características**: Las funcionalidades principales de la aplicación, como el catálogo de productos, la pasarela de pagos, y los roles de usuario.
-3. **Tecnologías**: Herramientas y tecnologías utilizadas en el proyecto.
-4. **Instalación**: Instrucciones detalladas para configurar y correr el proyecto localmente.
-5. **Rutas principales**: Una lista de las rutas que ofrece tanto el frontend como el backend.
-6. **Roles de usuario**: Detalle sobre las funcionalidades que tiene cada rol (admin y user).
-7. **Contribución**: Instrucciones para aquellos que quieran contribuir al proyecto.
-8. **Licencia**: Tipo de licencia para el código del proyecto.
+## Características
 
-Este es un punto de partida para tu **README**. Si necesitas más detalles o ajustes, ¡dime y lo personalizamos más! 😊
+- **Catálogo de productos**: Muestra productos para mascotas categorizados, con detalles sobre cada uno.
+- **Pasarela de pagos**: Los usuarios pueden realizar pagos a través de una pasarela de pagos integrada.
+- **Gestión de stock**: Los productos tienen una cantidad limitada en el inventario, y los administradores pueden actualizar el stock.
+- **Roles de usuario**: Existen dos roles:
+  - **Admin**: Puede añadir, editar y eliminar productos, gestionar el stock y visualizar las estadísticas de ventas.
+  - **User**: Puede ver los productos, agregar productos al carrito y realizar pagos.
+- **Sistema de autenticación**: Los usuarios deben crear una cuenta o iniciar sesión para realizar compras.
+
+## Tecnologías utilizadas
+
+- **Frontend**:
+  - Next.js
+  - Tailwind CSS
+  - TypeScript
+
+- **Backend**:
+  - Node.js
+  - Express
+  - PostgreSQL (Base de datos)
+  - JWT para autenticación
+  - Stripe (para la pasarela de pagos)
+
+## Instalación
+
+1. **Clonar el repositorio**:
+
+```bash
+git clone https://github.com/tu-usuario/chill-pets.git
