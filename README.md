@@ -1,34 +1,87 @@
-# Chill Pets
+# CHILL PETS - Petshop Online 🐾
 
-**Chill Pets** es una página web para la venta de productos para mascotas. Ofrece un catálogo de productos, una pasarela de pagos para realizar compras y un sistema de gestión de inventario (stock). La plataforma cuenta con dos tipos de usuarios: **Administrador** y **Usuario**. El Administrador tiene permisos para gestionar productos, precios y stock, mientras que el Usuario puede navegar por el catálogo, realizar compras y gestionar su perfil.
+## Descripción
+**CHILL PETS** es una tienda en línea de productos para el bienestar de mascotas, diseñada para ofrecer una experiencia de compra fácil y segura. La aplicación incluye autenticación, pasarela de pagos, gestión de stock, blog informativo y un dashboard de administración.
 
-## Características
+## Tecnologías Utilizadas
+- **Frontend:** React, Next.js, Tailwind CSS
+- **Backend:** Node.js, Express, TypeScript
+- **Base de datos:** PostgreSQL con TypeORM
+- **Autenticación:** JWT y OAuth (Google, Facebook, etc.)
+- **Almacenamiento de imágenes:** Cloudinary
+- **Pasarela de pagos:** Mercado Pago
+- **Despliegue:** Vercel (frontend) y Railway/Render (backend)
+- **Documentación API:** Swagger
+- **Correo y notificaciones:** Nodemailer
 
-- **Catálogo de productos**: Muestra productos para mascotas categorizados, con detalles sobre cada uno.
-- **Pasarela de pagos**: Los usuarios pueden realizar pagos a través de una pasarela de pagos integrada.
-- **Gestión de stock**: Los productos tienen una cantidad limitada en el inventario, y los administradores pueden actualizar el stock.
-- **Roles de usuario**: Existen dos roles:
-  - **Admin**: Puede añadir, editar y eliminar productos, gestionar el stock y visualizar las estadísticas de ventas.
-  - **User**: Puede ver los productos, agregar productos al carrito y realizar pagos.
-- **Sistema de autenticación**: Los usuarios deben crear una cuenta o iniciar sesión para realizar compras.
+## Funcionalidades
+- 📌 **Autenticación propia y con terceros (Google, Facebook)**
+- 📦 **Catálogo de productos con gestión de stock**
+- 💳 **Pasarela de pagos con Mercado Pago**
+- 📝 **Blog con  sobre cuidado de mascotas**
+- 📩 **Notificaciones por correo electrónico (confirmaciones de compra, actualizaciones de stock, etc.)**
+- 🖼️ **Carga y gestión de imágenes con Cloudinary**
+- 📊 **Dashboard de administración para gestionar productos, pedidos y usuarios**
+- 🚀 **Despliegue en Vercel y documentación en Swagger**
 
-## Tecnologías utilizadas
+## Instalación y Configuración
+### Requisitos previos
+- Node.js
+- PostgreSQL
+- Cuenta en Mercado Pago y Cloudinary
 
-- **Frontend**:
-  - Next.js
-  - Tailwind CSS
-  - TypeScript
-
-- **Backend**:
-  - Node.js
-  - Express
-  - PostgreSQL (Base de datos)
-  - JWT para autenticación
-  - Stripe (para la pasarela de pagos)
-
-## Instalación
-
-1. **Clonar el repositorio**:
-
+### Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/chill-pets.git
+git clone https://github.com/usuario/chill-pets.git
+cd chill-pets
+```
+
+### Configuración del Backend
+1. Crear archivo `.env` con las siguientes variables:
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/chillpets
+JWT_SECRET=supersecreto
+CLOUDINARY_CLOUD_NAME=xxxxx
+CLOUDINARY_API_KEY=xxxxx
+CLOUDINARY_API_SECRET=xxxxx
+MERCADO_PAGO_ACCESS_TOKEN=xxxxx
+```
+2. Instalar dependencias y correr migraciones:
+```bash
+cd backend
+npm install
+typeorm migration:run
+npm run dev
+```
+
+### Configuración del Frontend
+1. Instalar dependencias:
+```bash
+cd frontend
+npm install
+```
+2. Iniciar el servidor de desarrollo:
+```bash
+npm run dev
+```
+
+## Despliegue
+- **Frontend:** Vercel
+- **Backend:** Railway o Render
+
+## Documentación API
+- La API está documentada con Swagger en: `http://localhost:5000/api-docs`
+
+## Contribuir
+1. Hacer un fork del repositorio
+2. Crear una rama (`git checkout -b nueva-funcionalidad`)
+3. Realizar cambios y hacer commit (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Enviar un pull request
+
+## Licencia
+Este proyecto está bajo la licencia MIT.
+
+---
+💙 ¡Gracias por apoyar CHILL PETS y ayudar a mejorar la vida de las mascotas! 🐶🐱
+
+
