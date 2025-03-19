@@ -5,7 +5,7 @@ const Banner: React.FC = () => {
   return (
     <div className="relative w-full h-58">
       <img
-        src="/Banner.png" // Aquí coloca la ruta de tu imagen
+        src="/banner(2).png" // Aquí coloca la ruta de tu imagen
         alt="PetShop Banner"
         className="w-full h-full object-cover"
       />
