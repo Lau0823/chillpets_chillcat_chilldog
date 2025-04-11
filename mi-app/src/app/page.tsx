@@ -1,17 +1,20 @@
 import Banner from "@/components/Banner/Banner";
+import Carrusel from "@/components/Carrusel/Carrusel";
 import Carousel from "@/components/Carrusel/Carrusel";
+import HeartCard from "@/components/heartCard/heartCard";
 
 export default function Home() {
   return (
-    <div className="bg-white  p-4">
-      <h1 className="font-marker text-4xl text-black text-center ">
-        ¡Bienvenido a ChillPets!
-      </h1>
+    <div className="bg-orange-400">
      
-      <main className="min-h-screen bg-gray-100 flex flex-col items-center">
-      <h1 className="text-4xl font-bold my-6"></h1>
-      <Carousel />
+      <main className="min-h-screen bg-orange-400 flex items-center justify-center">
+      <HeartCard />
+   
+      
     </main>
+    <div>
+      <Carrusel/>
+    </div>
     </div>
     
   );

@@ -26,9 +26,9 @@ export default function RootLayout({
         <Header />
 
         {/* Navbar */}
-        <header className="bg-white shadow-md p-7">
+        
           <Navbar />
-        </header>
+        
 
         {/* Contenido principal */}
         <main className="min-h-screen flex flex-col">{children}</main>
