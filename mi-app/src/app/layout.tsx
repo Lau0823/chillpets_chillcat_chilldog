@@ -2,6 +2,8 @@ import '../../src/app/globals.css';
 import { Nunito } from 'next/font/google';
 import Navbar from '../components/NavBar/Navbar';
 import Header from '../components/Header/Header'; // Importa el Header
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const nunito = Nunito({
   subsets: ['latin'],
