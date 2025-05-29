@@ -1,14 +1,21 @@
+import Link from "next/link";
+
 export default function Navbar() {
     return (
       <nav className="bg-orange-400 text-black p-4 ">
         <div className="container mx-auto px-4 flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center p-4">
-          <img
-  src="/logo (3).png" // Asegúrate de que la ruta sea correcta
-  alt="ChillPets Logo"
-  className="h-20 w-15 mr-3"
-/>
+        
+
+<Link href="/">
+  <img
+    src="/logo (3).png"
+    alt="ChillPets Logo"
+    className="h-20 w-auto mr-3 cursor-pointer"
+  />
+</Link>
+
           
           </div>
   
@@ -16,7 +23,7 @@ export default function Navbar() {
           <ul className="flex space-x-6">
             <li>
               <a
-                href="#perros"
+                href="perros"
                 className="hover:text-gray-300 transition duration-300"
               >
                 Perros
@@ -32,7 +39,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="#promociones"
+                href="promociones"
                 className="hover:text-gray-300 transition duration-300"
               >
                 Promociones
@@ -40,7 +47,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="#blog"
+                href="blog"
                 className="hover:text-gray-300 transition duration-300"
               >
                 Blog
