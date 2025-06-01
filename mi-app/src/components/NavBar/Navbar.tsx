@@ -76,13 +76,13 @@ export default function Navbar() {
             href="/login"
             className="bg-yellow-400 hover:bg-lime-500 text-white py-2 px-4 rounded transition"
           >
-            Login
+            Entrar
           </Link>
           <Link
             href="/register"
             className="bg-white border border-white hover:bg-white hover:text-yellow-400 py-2 px-4 rounded transition"
           >
-            Register
+            Registro
           </Link>
         </div>
       </div>

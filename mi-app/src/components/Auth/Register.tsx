@@ -81,11 +81,11 @@ export default function RegisterForm() {
       <ToastContainer />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 p-6 max-w-md mx-auto bg-violet-400 rounded-lg shadow"
+        className="flex flex-col gap-4 p-6 max-w-md mx-auto bg-yellow-500 rounded-lg shadow"
 
       >
         <h2 className="text-2xl font-bold mb-4 text-white text-center">
-        SINGUP
+        Registro
       </h2>
         <label htmlFor="nombre">
           Nombre:
