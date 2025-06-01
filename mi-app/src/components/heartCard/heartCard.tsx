@@ -1,6 +1,7 @@
 
 'use client';
 import { Edu_VIC_WA_NT_Beginner } from 'next/font/google';
+import Link from 'next/link';
 
 const eduFont = Edu_VIC_WA_NT_Beginner({
   subsets: ['latin'],
@@ -36,9 +37,11 @@ export default function BannerCard() {
     
 
     {/* Botón */}
-    <button className="mt-2 bg-yellow-400 text-white font-semibold py-2 px-6 rounded hover:bg-yellow-500 transition duration-300">
-      Comprar
-    </button>
+    <Link href="/promociones">
+      <button className="mt-2 bg-yellow-400 text-white font-semibold py-2 px-6 rounded hover:bg-yellow-500 transition duration-300">
+        Comprar
+      </button>
+    </Link>
   </div>
 </div>
 

@@ -34,42 +34,42 @@ const products: Product[] = [
 
   },
   {
-    id: 1,
+    id: 4,
     name: 'Juguete para Gatos',
     image: '/taudona.png',
     description: 'Pelota con sonido para gatos activos.',
     price: 130.000,
   },
   {
-    id: 2,
+    id: 5,
     name: 'Collar para Perros',
     image: '/taucama.png',
     description: 'Collar ajustable y cómodo.',
     price: 120.000,
   },
   {
-    id: 3,
+    id: 6,
     name: 'Comida Premium',
     image: '/rectangular.png',
     description: 'Alimento natural y balanceado.',
     price: 120.000,
     
   }, {
-    id: 1,
+    id: 7,
     name: 'Juguete para Gatos',
     image: '/titocama.png',
     description: 'Pelota con sonido para gatos activos.',
     price: 130.000,
   },
   {
-    id: 2,
+    id: 8,
     name: 'Collar para Perros',
     image: '/1.png',
     description: 'Collar ajustable y cómodo.',
     price: 120.000,
   },
   {
-    id: 3,
+    id: 9,
     name: 'Comida Premium',
     image: '/2.png',
     description: 'Alimento natural y balanceado.',

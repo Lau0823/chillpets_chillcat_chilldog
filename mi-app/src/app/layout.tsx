@@ -3,6 +3,7 @@ import { Nunito } from 'next/font/google';
 import Navbar from '../components/NavBar/Navbar';
 import Header from '../components/Header/Header'; // Importa el Header
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '@/components/Footer/Footer';
 
 
 const nunito = Nunito({
@@ -34,7 +35,10 @@ export default function RootLayout({
 
         {/* Contenido principal */}
         <main className="min-h-screen flex flex-col">{children}</main>
+
+        <Footer />
       </body>
+
     </html>
   );
 }
