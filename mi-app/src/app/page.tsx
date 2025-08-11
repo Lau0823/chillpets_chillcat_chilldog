@@ -1,21 +1,17 @@
 import Banner from "@/components/Banner/Banner";
 import Carrusel from "@/components/Carrusel/Carrusel";
-import Carousel from "@/components/Carrusel/Carrusel";
+import Cards from "@/components/cards/Cards";
 import HeartCard from "@/components/heartCard/heartCard";
+import { CgCardSpades } from "react-icons/cg";
 
 export default function Home() {
   return (
-    <div className="bg-orange-400">
-     
-      <main className="min-h-screen bg-orange-400 flex items-center justify-center">
-      <HeartCard />
-   
-      
-    </main>
-    <div>
-      <Carrusel/>
-    </div>
-    </div>
-    
+    <>
+      <main className="min-h-screen bg-stone-100 flex items-center justify-center m-4 p- mt-8 ">
+        <Cards />
+      </main>
+
+      <Carrusel />
+    </>
   );
 }

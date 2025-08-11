@@ -24,7 +24,7 @@ export default function BannerCard() {
 
   return (
   
-<div className="relative w-full bg-orange-400 rounded-xl shadow-xl flex items-center justify-center px-4 py-8">
+<div className="relative w-full bg-white rounded-xl shadow-xl flex items-center justify-center px-4 py-8">
   <div className="flex flex-col items-center w-full max-w-3xl">
     
     {/* Imagen 1 */}

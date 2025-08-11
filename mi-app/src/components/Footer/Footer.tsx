@@ -15,7 +15,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-orange-400 dark:bg-orange-600 text-white py-10 px-6">
+    <footer className="bg-stone-100 text-white py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* LOGO y descripción */}
         <div>

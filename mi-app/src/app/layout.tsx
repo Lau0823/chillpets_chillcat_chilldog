@@ -1,7 +1,7 @@
 import '../../src/app/globals.css';
 import { Nunito } from 'next/font/google';
 import Navbar from '../components/NavBar/Navbar';
-import Header from '../components/Header/Header'; // Importa el Header
+
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '@/components/Footer/Footer';
 
@@ -25,8 +25,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={nunito.variable}>
-        {/* Header con información */}
-        <Header />
+      
 
         {/* Navbar */}
         
@@ -34,7 +33,7 @@ export default function RootLayout({
         
 
         {/* Contenido principal */}
-        <main className="min-h-screen flex flex-col">{children}</main>
+        <main className="bg-stone-100 min-h-screen flex flex-col">{children}</main>
 
         <Footer />
       </body>
