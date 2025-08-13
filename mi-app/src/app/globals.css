@@ -6,6 +6,31 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 
+
+
+@layer utilities {
+  @keyframes float-slow {
+    0%   { transform: translateY(0) translateX(0) scale(1); }
+    50%  { transform: translateY(-20px) translateX(6px) scale(1.03); }
+    100% { transform: translateY(0) translateX(0) scale(1); }
+  }
+  @keyframes float-fast {
+    0%   { transform: translateY(0) translateX(0) scale(1); }
+    50%  { transform: translateY(-32px) translateX(-8px) scale(1.06); }
+    100% { transform: translateY(0) translateX(0) scale(1); }
+  }
+  @keyframes sway {
+    0%   { transform: rotate(0deg) translateY(0); }
+    50%  { transform: rotate(-3deg) translateY(-6px); }
+    100% { transform: rotate(0deg) translateY(0); }
+  }
+
+  .animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+  .animate-float-fast { animation: float-fast 6.5s ease-in-out infinite; }
+  .animate-sway       { animation: sway 7s ease-in-out infinite; }
+}
+
+
 @keyframes float {
   0% {
     transform: translateY(0) scale(1);

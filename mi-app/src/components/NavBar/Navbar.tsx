@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="backdrop-blur-md bg-white/10 rounded-2xl shadow-lg border border-white/20 mx-4 mt-4 pb-4">
+    <nav className="bg-white border-none">
       <div className="container mx-auto flex items-center justify-between h-20 px-4">
         
         {/* LOGO */}
@@ -72,7 +72,7 @@ export default function Navbar() {
           {/* AUTH BUTTONS */}
           <Link
             href="/login"
-            className="bg-black-400 hover:bg-lime-500 text-white py-2 px-4 rounded transition"
+            className="bg-white hover:bg-white hover:text-yellow-400 text-black py-2 px-4 rounded transition"
           >
             Entrar
           </Link>

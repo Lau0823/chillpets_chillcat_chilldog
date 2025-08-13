@@ -39,7 +39,7 @@ const Cards = () => {
             className="w-full h-56 object-cover"
           />
           <div className="p-4 text-center">
-            <h3 className="text-lg font-semibold text-white">
+            <h3 className="text-lg font-semibold text-black">
               {product.name}
             </h3>
             <p className="text-pink-300 font-bold">{product.price}</p>
