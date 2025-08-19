@@ -12,13 +12,11 @@ import { PagosModule } from './pagos/pagos.module';
 import { StockModule } from './stock/stock.module';
 import { FinanzasModule } from './finanzas/finanzas.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
