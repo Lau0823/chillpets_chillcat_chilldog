@@ -1,5 +1,7 @@
 // src/usuarios/entities/usuario.entity.ts
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
+import { Rol } from '../../common/enums/rol.enum';
+import * as bcrypt from 'bcryptjs';
 
 @Entity()
 export class Usuario {
@@ -15,6 +17,14 @@ export class Usuario {
   @Column()
   contraseña: string;
 
-  @Column({ default: 'cliente' })
-  rol: string;
+  @Column({ type: 'enum', enum: Rol, default: Rol.Cliente })
+  rol: Rol;
+
+  @BeforeInsert()
+  async hashContrasena() {
+    if (this.contraseña) {
+      const salt = await bcrypt.genSalt();
+      this.contraseña = await bcrypt.hash(this.contraseña, salt);
+    }
+  }
 }
