@@ -1,4 +1,3 @@
-// src/imagenes/cloudinary.config.ts
 import { v2 as cloudinary } from 'cloudinary';
 import { CLOUDINARY } from './constants';
 import { ConfigService } from '@nestjs/config';

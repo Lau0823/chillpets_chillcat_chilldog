@@ -1,4 +1,3 @@
-// src/imagenes/imagenes.controller.ts
 import {
   Controller,
   Post,
@@ -14,9 +13,10 @@ import { ImagenesService } from './imagenes.service';
 import {
   ApiBearerAuth,
   ApiConsumes,
-  ApiOkResponse,
+  ApiCreatedResponse,
   ApiOperation,
   ApiTags,
+  ApiBody, 
 } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { RolesGuard } from '../auth/roles.guard';
@@ -36,23 +36,29 @@ export class ImagenesController {
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Sube una imagen a Cloudinary (solo administradores)' })
   @ApiConsumes('multipart/form-data')
-  @ApiOkResponse({
+  @ApiBody({ 
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+          description: 'El archivo de imagen a subir.',
+        },
+      },
+    },
+  })
+  @ApiCreatedResponse({
     description: 'Imagen subida exitosamente.',
-    type: CloudinaryResponseDto, 
+    type: CloudinaryResponseDto,
   })
   @UseInterceptors(FileInterceptor('file'))
-  async subirImagen(@UploadedFile() file: Express.Multer.File): Promise<any> { // Nota: cambiamos el tipo de retorno a `any`
+  async subirImagen(
+    @UploadedFile() file: Express.Multer.File,
+  ): Promise<CloudinaryResponseDto> {
     if (!file) {
       throw new BadRequestException('No se ha proporcionado un archivo.');
     }
-    const result = await this.imagenesService.subirImagen(file);
-    // Devuelve solo los datos relevantes que definiste en el DTO
-    return {
-      public_id: result.public_id,
-      secure_url: result.secure_url,
-      width: result.width,
-      height: result.height,
-      format: result.format,
-    };
+    return this.imagenesService.subirImagen(file);
   }
 }

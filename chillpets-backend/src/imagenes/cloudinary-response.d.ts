@@ -1,4 +1,3 @@
-// src/imagenes/cloudinary-response.d.ts
 export interface CloudinaryResponse {
   asset_id: string;
   public_id: string;
@@ -21,3 +20,11 @@ export interface CloudinaryResponse {
   access_mode: string;
   original_filename: string;
 }
+
+export type ImageUploadResult = {
+  public_id: string;
+  secure_url: string;
+  width: number;
+  height: number;
+  format: string;
+};

@@ -1,4 +1,3 @@
-// src/imagenes/imagenes.module.ts
 import { Module } from '@nestjs/common';
 import { ImagenesService } from './imagenes.service';
 import { ImagenesController } from './imagenes.controller';
@@ -9,6 +8,6 @@ import { ConfigModule } from '@nestjs/config';
   imports: [ConfigModule],
   controllers: [ImagenesController],
   providers: [CloudinaryProvider, ImagenesService],
-  exports: [CloudinaryProvider, ImagenesService], // Lo exportamos para que otros módulos puedan usarlo
+  exports: [CloudinaryProvider, ImagenesService],
 })
 export class ImagenesModule {}

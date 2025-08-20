@@ -1,16 +1,14 @@
-// src/imagenes/imagenes.service.ts
 import { Injectable, Inject } from '@nestjs/common';
-import { v2 as cloudinary } from 'cloudinary';
 import { CLOUDINARY } from './constants';
-import { CloudinaryResponse } from './cloudinary-response';
 import { Readable } from 'stream';
+import { CloudinaryResponse, ImageUploadResult } from './cloudinary-response';
 
 @Injectable()
 export class ImagenesService {
   constructor(@Inject(CLOUDINARY) private cloudinary) {}
 
-  async subirImagen(file: Express.Multer.File): Promise<CloudinaryResponse> {
-    return new Promise((resolve, reject) => {
+  async subirImagen(file: Express.Multer.File): Promise<ImageUploadResult> {
+    return new Promise<CloudinaryResponse>((resolve, reject) => {
       const uploadStream = this.cloudinary.uploader.upload_stream(
         { resource_type: 'auto' },
         (error, result) => {
@@ -23,6 +21,12 @@ export class ImagenesService {
       stream.push(file.buffer);
       stream.push(null);
       stream.pipe(uploadStream);
-    });
+    }).then(result => ({
+      public_id: result.public_id,
+      secure_url: result.secure_url,
+      width: result.width,
+      height: result.height,
+      format: result.format,
+    }));
   }
 }
