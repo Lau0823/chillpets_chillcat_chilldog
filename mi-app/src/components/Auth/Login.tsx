@@ -64,10 +64,10 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 p-6 max-w-md mx-auto bg-violet-400 rounded-lg shadow"
+      className="flex flex-col gap-4 p-6 max-w-md mx-auto bg-lime-500 rounded-lg shadow"
     >
       <h2 className="text-2xl font-bold mb-4 text-white text-center">
-        LOGIN
+        Inicio de sesion
       </h2>
 
       <label>
