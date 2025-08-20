@@ -57,4 +57,23 @@ export class OrdenesController {
   findOne(@Param('id') id: string) {
     return this.ordenesService.findOne(id);
   }
+@Get('reporte/ingresos')
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles(Rol.Admin)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Genera un reporte de ingresos totales (solo para administradores)' })
+  @ApiOkResponse({ description: 'Reporte de ingresos totales generado.' })
+  async getReporteIngresos() {
+    return this.ordenesService.generarReporteIngresos();
+  }
+
+  @Get('reporte/ventas-por-producto')
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles(Rol.Admin)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Genera un reporte de ventas por producto (solo para administradores)' })
+  @ApiOkResponse({ description: 'Reporte de ventas por producto generado.' })
+  async getReporteVentasPorProducto() {
+    return this.ordenesService.generarReporteVentasPorProducto();
+  }
 }

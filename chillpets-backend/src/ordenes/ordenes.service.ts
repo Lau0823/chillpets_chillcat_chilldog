@@ -2,7 +2,7 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Orden } from './entities/ordenes.entity';
+import { EstadoOrden, Orden } from './entities/ordenes.entity';
 import { DetalleOrden } from './entities/detalle-orden.entity';
 import { CreateOrdenDto } from './dto/create-ordene.dto';
 import { UpdateOrdenDto } from './dto/update-ordene.dto';
@@ -73,5 +73,31 @@ async create(createOrdenDto: CreateOrdenDto): Promise<Orden> {
       throw new NotFoundException(`Orden con ID "${id}" no encontrada.`);
     }
     return orden;
+  }
+   async generarReporteIngresos(): Promise<{ totalIngresos: number }> {
+    const resultado = await this.ordenesRepository
+      .createQueryBuilder('orden')
+      .select('SUM(orden.total)', 'totalIngresos')
+      .where('orden.estado = :estado', { estado: EstadoOrden.PAGADO })
+      .getRawOne();
+
+    const totalIngresos = parseFloat(resultado.totalIngresos) || 0;
+    return { totalIngresos };
+  }
+
+  async generarReporteVentasPorProducto(): Promise<any[]> {
+    const resultado = await this.detallesRepository
+      .createQueryBuilder('detalle')
+      .leftJoinAndSelect('detalle.producto', 'producto')
+      .leftJoin('detalle.orden', 'orden')
+      .select('producto.nombre', 'nombreProducto')
+      .addSelect('SUM(detalle.cantidad)', 'cantidadVendida')
+      .addSelect('SUM(detalle.cantidad * detalle.precioUnitario)', 'ingresos')
+      .where('orden.estado = :estado', { estado: EstadoOrden.PAGADO })
+      .groupBy('producto.nombre')
+      .orderBy('ingresos', 'DESC')
+      .getRawMany();
+
+    return resultado;
   }
 }

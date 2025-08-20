@@ -9,8 +9,6 @@ import { CarritoModule } from './carrito/carrito.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { AuthModule } from './auth/auth.module';
 import { PagosModule } from './pagos/pagos.module';
-import { StockModule } from './stock/stock.module';
-import { FinanzasModule } from './finanzas/finanzas.module';
 
 @Module({
   imports: [
@@ -39,8 +37,6 @@ import { FinanzasModule } from './finanzas/finanzas.module';
     CarritoModule,
     CategoriasModule,
     PagosModule,
-    StockModule,
-    FinanzasModule
   ],
     controllers: [],
   providers: [],

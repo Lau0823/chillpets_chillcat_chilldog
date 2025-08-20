@@ -27,6 +27,7 @@ import {
   ApiBearerAuth,
   ApiBody,
 } from '@nestjs/swagger';
+import { MovimientoInventarioDto } from './dto/movimiento-inventario.dto';
 
 @ApiTags('Productos')
 @Controller('productos')
@@ -81,5 +82,15 @@ export class ProductosController {
   @ApiNotFoundResponse({ description: 'Producto no encontrado.' })
   remove(@Param('id') id: string) {
     return this.productosService.remove(id);
+  }
+    @Post('stock')
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles(Rol.Admin)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Registra un movimiento de inventario (solo para administradores)' })
+  @ApiBody({ type: MovimientoInventarioDto })
+  @ApiOkResponse({ description: 'Stock actualizado exitosamente.' })
+  async actualizarStock(@Body() movimientoDto: MovimientoInventarioDto) {
+    return this.productosService.actualizarStock(movimientoDto);
   }
 }
