@@ -1,6 +1,8 @@
 // src/productos/entities/producto.entity.ts
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, OneToMany } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
+import { Categoria } from 'src/categorias/entities/categoria.entity';
+import { DetalleOrden } from 'src/ordenes/entities/detalle-orden.entity';
 
 @Entity('productos')
 export class Producto {
@@ -58,4 +60,10 @@ export class Producto {
   @ApiProperty({ description: 'Fecha de creación del producto' })
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   fechaCreacion: Date;
+
+ @ManyToMany(() => Categoria, (categoria) => categoria.productos)
+  categorias: Categoria[];
+
+    @OneToMany(() => DetalleOrden, (detalleOrden) => detalleOrden.producto)
+  detallesOrden: DetalleOrden[];
 }

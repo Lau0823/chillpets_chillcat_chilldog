@@ -1,7 +1,8 @@
 // src/usuarios/entities/usuario.entity.ts
-import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, OneToMany } from 'typeorm';
 import { Rol } from '../../common/enums/rol.enum';
 import * as bcrypt from 'bcryptjs';
+import { Orden } from 'src/ordenes/entities/ordenes.entity';
 
 @Entity()
 export class Usuario {
@@ -19,6 +20,10 @@ export class Usuario {
 
   @Column({ type: 'enum', enum: Rol, default: Rol.Cliente })
   rol: Rol;
+
+
+  @OneToMany(() => Orden, (orden) => orden.usuario)
+  ordenes: Orden[];
 
   @BeforeInsert()
   async hashContrasena() {
