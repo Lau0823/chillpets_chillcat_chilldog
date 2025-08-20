@@ -2,6 +2,8 @@ import '../../src/app/globals.css';
 import { Nunito } from 'next/font/google';
 import Navbar from '../components/NavBar/Navbar';
 import Header from '../components/Header/Header'; // Importa el Header
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -26,9 +28,9 @@ export default function RootLayout({
         <Header />
 
         {/* Navbar */}
-        <header className="bg-white shadow-md p-7">
+        
           <Navbar />
-        </header>
+        
 
         {/* Contenido principal */}
         <main className="min-h-screen flex flex-col">{children}</main>
