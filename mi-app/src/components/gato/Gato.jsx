@@ -4,28 +4,49 @@ import React from "react";
 const products = [
   {
     id: 1,
-    name: "Cama para perro",
-    price: "$120.000",
+    name: "Platos antireflujo",
+    price: "$70.000",
     image:
-      "https://i.pinimg.com/1200x/a6/b0/73/a6b073dbfb66d40ddf0454dff7da93bf.jpg",
+      "https://i.pinimg.com/736x/2a/a5/63/2aa563d722a173dbefd3c62d07ef35cf.jpg",
   },
   {
     id: 2,
-    name: "Collar para gato",
+    name: "Pocillo Your cat ",
     price: "$25.000",
     image:
-      "https://i.pinimg.com/736x/fe/74/40/fe7440a49c8c2815a885f853402d256c.jpg",
+      "https://i.pinimg.com/1200x/aa/c0/3a/aac03ad3e669d25a267b1506b57019c2.jpg",
   },
   {
     id: 3,
-    name: "Juguete mordedor",
+    name: "Rascador para gato",
     price: "$18.000",
     image:
-      "https://i.pinimg.com/736x/e6/d0/9e/e6d09e4d9e6e292e3ad144b73c53d379.jpg",
+      "https://i.pinimg.com/1200x/bd/47/a4/bd47a4a794bd71bde265f12876920d44.jpg",
+  },
+  {
+    id: 4,
+    name: "Cepillo para gato",
+    price: "$50.000",
+    image:
+      "https://i.pinimg.com/736x/88/90/13/889013a1f9af4fe290c518d9f043512b.jpg",
+  },
+  {
+    id: 5,
+    name: "Churru ",
+    price: "$14.000",
+    image:
+      "https://i.pinimg.com/736x/de/ea/67/deea6761b91fe2a9e2256a0069643404.jpg",
+  },
+  {
+    id: 6,
+    name: "Camiseta your pets",
+    price: "$18.000",
+    image:
+      "https://i.pinimg.com/736x/27/ea/30/27ea308d99874aded1008178d67746fb.jpg",
   },
 ];
 
-const Cards = () => {
+const Gatos = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
       {products.map((product) => (
@@ -53,4 +74,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default Gatos;

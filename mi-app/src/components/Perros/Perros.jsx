@@ -4,17 +4,17 @@ import React from "react";
 const products = [
   {
     id: 1,
-    name: "Cama para perro",
-    price: "$120.000",
+    name: "Platos antireflujo",
+    price: "$70.000",
     image:
-      "https://i.pinimg.com/1200x/a6/b0/73/a6b073dbfb66d40ddf0454dff7da93bf.jpg",
+      "https://i.pinimg.com/736x/1f/f4/c2/1ff4c266fa208d1231a9eba6c8aab2f8.jpg",
   },
   {
     id: 2,
-    name: "Collar para gato",
+    name: "Pechera para perro ",
     price: "$25.000",
     image:
-      "https://i.pinimg.com/736x/fe/74/40/fe7440a49c8c2815a885f853402d256c.jpg",
+      "https://i.pinimg.com/1200x/e5/71/d3/e571d339109f47312f783fce740a5834.jpg",
   },
   {
     id: 3,
@@ -23,9 +23,30 @@ const products = [
     image:
       "https://i.pinimg.com/736x/e6/d0/9e/e6d09e4d9e6e292e3ad144b73c53d379.jpg",
   },
+  {
+    id: 4,
+    name: "Buso Boss y Real boss",
+    price: "$150.000",
+    image:
+      "https://i.pinimg.com/736x/67/a6/4c/67a64c4aaeb9f096ce25b5bf2740431c.jpg",
+  },
+  {
+    id: 5,
+    name: "Camiseta your pets ",
+    price: "$70.000",
+    image:
+      "https://i.pinimg.com/1200x/17/37/2e/17372e71d75e058dcb640c9205578a14.jpg",
+  },
+  {
+    id: 6,
+    name: "Pocillo your pets",
+    price: "$18.000",
+    image:
+      "https://i.pinimg.com/736x/d6/61/1a/d6611a7530c3eceb37b37a543f47a98a.jpg",
+  },
 ];
 
-const Cards = () => {
+const Perros = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
       {products.map((product) => (
@@ -53,4 +74,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default Perros;

@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={nunito.variable}>
+      <body className=  {nunito.variable}>
       
 
         {/* Navbar */}

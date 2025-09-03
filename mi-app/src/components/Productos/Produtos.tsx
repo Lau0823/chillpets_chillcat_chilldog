@@ -71,7 +71,7 @@ const products: Product[] = [
   {
     id: 9,
     name: 'Comida Premium',
-    image: '/2.png',
+    image: '/mordedor perro.jpg',
     description: 'Alimento natural y balanceado.',
     price: 120.000,
     

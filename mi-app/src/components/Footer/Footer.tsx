@@ -15,11 +15,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-stone-100 text-white py-10 px-6">
+    <footer className="bg-stone-100 text-black py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* LOGO y descripción */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">ChillPets</h2>
+          <h2 className="text-2xl font-bold mb-2 text-pink-500 ">ChillPets</h2>
           <p className="text-sm">
             Consentimos a tus peluditos con amor, productos y estilo. 🐶🐱
           </p>
@@ -27,7 +27,7 @@ export default function Footer() {
 
         {/* Enlaces */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Navegación</h3>
+          <h3 className="font-semibold text-lg mb-2 text-pink-500">Navegación</h3>
           <ul className="space-y-1 text-sm">
             <li><Link href="/" className="hover:underline">Inicio</Link></li>
             <li><Link href="/perros" className="hover:underline">Perros</Link></li>
@@ -39,7 +39,7 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Newsletter</h3>
+          <h3 className="font-semibold text-lg mb-2 text-pink-500">Newsletter</h3>
           <p className="text-sm mb-2">Recibe ofertas y novedades exclusivas:</p>
           <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
             <input
@@ -61,7 +61,7 @@ export default function Footer() {
 
         {/* Redes sociales */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Síguenos</h3>
+          <h3 className="font-semibold text-lg mb-2 text-pink-500">Síguenos</h3>
           <div className="flex space-x-4">
             <a
               href="https://facebook.com"
