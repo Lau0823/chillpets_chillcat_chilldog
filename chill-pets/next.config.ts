@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: [
+      "placedog.net",
+      "placekitten.com",
+      "co.pinterest.com",
+      "i.pinimg.com", // 👈 este es el importante para las imágenes directas de Pinterest
+    ],
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
