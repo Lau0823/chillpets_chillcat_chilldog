@@ -23,7 +23,7 @@ export default function Navbar() {
         </Link>
 
         {/* MENÚ */}
-        <ul className="flex space-x-6 text-lg font-medium text-white">
+        <ul className="flex space-x-6 text-lg font-medium text-black">
           <li>
             <Link href="/perros" className="hover:text-yellow-300 transition">
               Perros

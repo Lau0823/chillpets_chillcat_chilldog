@@ -1,138 +1,103 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from "react";
 
-export default function LoginForm() {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    mascota: '',
-  });
-
-  const [errors, setErrors] = useState({
-    nombre: '',
-    apellido: '',
-    mascota: '',
-  });
-
-  const [isFormValid, setIsFormValid] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const validateForm = () => {
-    const newErrors = { nombre: '', apellido: '', mascota: '' };
-    let valid = true;
-
-    if (formData.nombre.trim().length < 3) {
-      newErrors.nombre = 'El nombre debe tener al menos 3 letras.';
-      valid = false;
-    }
-
-    if (formData.apellido.trim().length < 3) {
-      newErrors.apellido = 'El apellido debe tener al menos 3 letras.';
-      valid = false;
-    }
-
-    if (formData.mascota.trim().length < 3) {
-      newErrors.mascota = 'El nombre de la mascota debe tener al menos 3 letras.';
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
-
-  useEffect(() => {
-    setIsFormValid(validateForm());
-  }, [formData]);
+export default function LoginModal() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (validateForm()) {
-      console.log('Formulario enviado:', formData);
-    } else {
-      alert('Por favor corrige los errores antes de enviar.');
-    }
+    console.log("Email:", email, "Password:", password);
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-4 p-6 max-w-md mx-auto bg-lime-500 rounded-lg shadow"
-    >
-      <h2 className="text-2xl font-bold mb-4 text-white text-center">
-        Inicio de sesion
-      </h2>
+    <div className="flex items-center justify-center min-h-screen ">
+      {/* Modal */}
+      <div className="flex w-[800px] h-[500px] rounded-2xl shadow-2xl overflow-hidden bg-white">
+        {/* Sección izquierda con imagen */}
+        <div className="hidden md:flex w-1/2 relative items-center justify-center text-white">
+          {/* Imagen de internet como overlay */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://i.pinimg.com/736x/8c/0b/48/8c0b48b7fa77ce470b86b5ae806540eb.jpg')",
+            }}
+          ></div>
 
-      <label>
-        Nombre:
-        <input
-          type="text"
-          name="nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-          className={`border p-2 w-full rounded-md ${
-            errors.nombre ? 'border-red-500' : 'border-gray-300'
-          }`}
-          required
-        />
-        {errors.nombre && (
-          <p className="text-red-500 text-sm mt-1">{errors.nombre}</p>
-        )}
-      </label>
+          {/* Oscurecer un poco para contraste */}
+          <div className="absolute inset-0 bg-black bg-opacity-40 "></div>
 
-      <label>
-        Apellido:
-        <input
-          type="text"
-          name="apellido"
-          value={formData.apellido}
-          onChange={handleChange}
-          className={`border p-2 w-full rounded-md ${
-            errors.apellido ? 'border-red-500' : 'border-gray-300'
-          }`}
-          required
-        />
-        {errors.apellido && (
-          <p className="text-red-500 text-sm mt-1">{errors.apellido}</p>
-        )}
-      </label>
+          <div className="relative z-10 text-center">
+            <h2 className="text-2xl font-bold mb-4 text-pink-500">Bienvenido a CHILLPETS </h2>
+            <button className="px-6 py-2 bg-white text-gray-800 rounded-full shadow hover:bg-gray-100">
+              Registro
+            </button>
+          </div>
+        </div>
 
-      <label>
-        Mascota:
-        <input
-          type="text"
-          name="mascota"
-          value={formData.mascota}
-          onChange={handleChange}
-          className={`border p-2 w-full rounded-md ${
-            errors.mascota ? 'border-red-500' : 'border-gray-300'
-          }`}
-          required
-        />
-        {errors.mascota && (
-          <p className="text-red-500 text-sm mt-1">{errors.mascota}</p>
-        )}
-      </label>
+        {/* Sección derecha con el formulario */}
+        <div className="flex flex-col w-full md:w-1/2 justify-center items-center p-8">
+          <div className="w-full max-w-sm">
+            <h2 className="text-xl font-bold text-gray-800 mb-6">Hola petlover!</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Email */}
+              <div>
+                <input
+                  type="email"
+                  placeholder="Nombre o correo "
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                />
+              </div>
 
-      <button
-        type="submit"
-        disabled={!isFormValid}
-        className={`p-2 rounded-lg text-white font-semibold ${
-          isFormValid ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'
-        }`}
-      >
-        Enviar
-      </button>
-    </form>
+              {/* Password */}
+              <div>
+                <input
+                  type="password"
+                  placeholder="Contraseña"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                />
+              </div>
+
+              {/* Remember me */}
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  className="mr-2 rounded border-gray-300"
+                />
+                <label htmlFor="remember" className="text-sm text-gray-600">
+                 Recordarme
+                </label>
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full bg-black text-white py-2 rounded-lg hover:bg-pink-500 transition"
+              >
+                ENTRAR
+              </button>
+            </form>
+
+            {/* Links */}
+            <div className="text-center mt-4 text-sm text-pink-500">
+              <a href="register" className="hover:underline">
+                Registro
+              </a>{" "}
+              |{" "}
+              <a href="#" className="hover:underline">
+                Olvidaste tu contraseña?
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
-
-
-

@@ -1,162 +1,110 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
-export default function RegisterForm() {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    mascota: '',
-    raza: '',
-    password: '',
-    cantidad: '1',
-  });
-
-  const [errors, setErrors] = useState({
-    nombre: '',
-    raza: '',
-    password: '',
-  });
-
-  const [isFormValid, setIsFormValid] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const validateForm = () => {
-    const newErrors = { nombre: '', raza: '', password: '' };
-    let valid = true;
-
-    if (formData.nombre.trim().length < 3) {
-      newErrors.nombre = 'El nombre debe tener al menos 3 letras.';
-      valid = false;
-    }
-
-    if (formData.raza.trim().length < 3) {
-      newErrors.raza = 'La raza debe tener al menos 3 letras.';
-      valid = false;
-    }
-
-    if (!/(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
-      newErrors.password = 'La contraseña debe tener una mayúscula y un número.';
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
-
-  useEffect(() => {
-    setIsFormValid(validateForm());
-  }, [formData]);
+export default function RegisterModal() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (validateForm()) {
-      toast.success('¡Formulario enviado con éxito!');
-      console.log('Formulario:', formData);
-
-      setFormData({
-        nombre: '',
-        apellido: '',
-        mascota: '',
-        raza: '',
-        password: '',
-        cantidad: '1',
-      });
-    } else {
-      toast.error('Por favor corrige los errores.');
+    if (password !== confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
     }
+    console.log("Registering:", { name, email, password });
   };
 
   return (
-    <>
-      <ToastContainer />
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4 p-6 max-w-md mx-auto bg-yellow-500 rounded-lg shadow"
+    <div className="flex items-center justify-center min-h-screen mt-4">
+      {/* Modal */}
+      <div className="flex w-[900px] h-[550px] rounded-2xl shadow-2xl overflow-hidden bg-white">
+        {/* Sección izquierda con imagen */}
+        <div className="hidden md:flex w-1/2 relative items-center justify-center text-white">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://i.pinimg.com/1200x/35/47/71/35477178f1ded1aca4d01ae5ca1c5026.jpg')", // 👉 Cambia esta URL
+            }}
+          ></div>
+          {/* Overlay oscuro */}
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-      >
-        <h2 className="text-2xl font-bold mb-4 text-white text-center">
-        Registro
-      </h2>
-        <label htmlFor="nombre">
-          Nombre:
-          <input
-            id="nombre"
-            type="text"
-            name="nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-            className={`border p-2 w-full rounded-md ${errors.nombre ? 'border-red-500' : 'border-gray-300'}`}
-            required
-          />
-          {errors.nombre && <p className="text-red-500 text-sm">{errors.nombre}</p>}
-        </label>
+          <div className="relative z-10 text-center">
+            <h2 className="text-3xl font-bold mb-4"></h2>
+            <p className="mb-6">Amamos las mascotas </p>
+          </div>
+        </div>
 
-        <label htmlFor="apellido">
-          Apellido:
-          <input
-            id="apellido"
-            type="text"
-            name="apellido"
-            value={formData.apellido}
-            onChange={handleChange}
-            className="border p-2 w-full rounded-md border-gray-300"
-            required
-          />
-        </label>
+        {/* Sección derecha con formulario */}
+        <div className="flex flex-col w-full md:w-1/2 justify-center items-center p-8">
+          <div className="w-full max-w-sm">
+            <h2 className="text-xl font-bold text-gray-800 mb-6">
+              Crear cuenta 
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Nombre */}
+              <input
+                type="text"
+                placeholder="Nombre completo"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              />
 
-        <label htmlFor="mascota">
-          Nombre de la mascota:
-          <input
-            id="mascota"
-            type="text"
-            name="mascota"
-            value={formData.mascota}
-            onChange={handleChange}
-            className="border p-2 w-full rounded-md border-gray-300"
-            required
-          />
-        </label>
+              {/* Email */}
+              <input
+                type="email"
+                placeholder="Correo"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              />
 
-      
+              {/* Password */}
+              <input
+                type="password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              />
 
-        <label htmlFor="password">
-          Contraseña:
-          <input
-            id="password"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className={`border p-2 w-full rounded-md ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
-            required
-          />
-          {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
-        </label>
+              {/* Confirm Password */}
+              <input
+                type="password"
+                placeholder="Confirmar Contraseña"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              />
 
-    
+              {/* Botón */}
+              <button
+                type="submit"
+                className="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition"
+              >
+                Registro
+              </button>
+            </form>
 
-        <button
-          type="submit"
-          disabled={!isFormValid}
-          className={`${
-            isFormValid
-              ? 'bg-orange-500 hover:bg-orange-600'
-              : 'bg-blue-500 cursor-not-allowed'
-          } text-white font-semibold py-2 px-4 rounded-lg`}
-        >
-          Enviar
-        </button>
-      </form>
-    </>
+            {/* Links */}
+            <div className="text-center mt-4 text-sm text-gray-600">
+              Ya tienes una cuenta?{" "}
+              <a href="/login" className="text-pink-500 hover:underline">
+                Entrar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
