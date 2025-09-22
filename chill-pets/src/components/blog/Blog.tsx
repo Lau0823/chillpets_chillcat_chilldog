@@ -40,7 +40,9 @@ export default function Blog() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-2 py-10">
+   <section className="max-w-6xl mx-auto px-2 py-10 pt-24">
+
+
       {/* Hero */}
       <div className="relative text-center mb-12">
         <Image
@@ -91,3 +93,4 @@ export default function Blog() {
     </section>
   );
 }
+

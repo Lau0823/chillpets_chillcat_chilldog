@@ -6,7 +6,7 @@ export default function BackgroundPets() {
   return (
     <div className=" w-screen relative w-full h-[80vh] overflow-hidden ">
       <Image
-        src="https://i.pinimg.com/1200x/d5/c3/d5/d5c3d54a3fadc268b74dc0be269de3c8.jpg"
+        src="https://i.pinimg.com/1200x/54/67/05/5467057d1c63146327d325ac086dd2f3.jpg"
         alt="Hero ChillPets"
         fill
         priority

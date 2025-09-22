@@ -11,3 +11,14 @@
   --tw-scale-y: 1.05;
   transform: scale(var(--tw-scale-x), var(--tw-scale-y));
 }
+/* Cambiar color de las flechas del carrusel */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: #ec4899; /* Tailwind pink-500 */
+  font-weight: bold;
+}
+
+.custom-swiper .swiper-button-next:hover,
+.custom-swiper .swiper-button-prev:hover {
+  color: #db2777; /* Tailwind pink-600 */
+}

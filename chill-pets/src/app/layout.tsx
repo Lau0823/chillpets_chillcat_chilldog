@@ -1,43 +1,39 @@
-import "../../src/app/globals.css";
+import "./globals.css";
+import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-
-import Footer from "@/components/Footer/Footer";
-import Filters from "@/components/filters/Filters";
 import Navbar from "@/components/NavBar/NavBar";
+import Filters from "@/components/filters/Filters";
+import Footer from "@/components/Footer/Footer";
+import { CartProvider } from "./context/CartContext";
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-nunito",
 });
 
-export const metadata = {
-  title: "CHILL PETS",
-  description: "Productos de calidad para perros y gatos",
+export const metadata: Metadata = {
+  title: "Chill Pets",
+  description: "E-commerce para tus mascotas 🐾",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={nunito.variable}>
-        {/* Navbar */}
-        <Navbar />
+      <body className={nunito.className}>
+        <CartProvider>
+          <div className="flex flex-col min-h-screen pt-20 ">
+            {/* Navbar */}
+            <Navbar />
 
-        {/* Contenido principal con layout de filtros + productos */}
-        <main className="bg-white min-h-screen  gap-6 ">
-          {/* Sidebar de filtros */}
-          
+            {/* Main content */}
+            <main className="flex-3">
+              {/* Banner o secciones que deben ocupar toda la pantalla */}
+              {children}
+            </main>
 
-          {/* Contenido dinámico (productos, páginas, etc.) */}
-          <section className="md:col-span-3">{children}</section>
-        </main>
-
-        {/* Footer */}
-        <Footer />
+            {/* Footer */}
+            <Footer />
+          </div>
+        </CartProvider>
       </body>
     </html>
   );

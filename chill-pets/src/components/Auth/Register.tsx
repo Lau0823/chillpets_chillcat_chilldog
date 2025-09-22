@@ -31,7 +31,7 @@ export default function RegisterModal() {
             }}
           ></div>
           {/* Overlay oscuro */}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 "></div>
 
           <div className="relative z-10 text-center">
             <h2 className="text-3xl font-bold mb-4"></h2>
