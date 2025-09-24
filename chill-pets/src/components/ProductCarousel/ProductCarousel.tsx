@@ -1,77 +1,87 @@
 "use client";
 
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+import Image from "next/image";
 
-const products = [
+interface Producto {
+  id: number;
+  nombre: string;
+  img: string;
+  precio: string;
+}
+
+const productos: Producto[] = [
   {
     id: 1,
-    name: "T-shirt Dog",
-    color: "Crema",
-    talla: "XS, M, L, XL",
-    image:
-      "https://i.pinimg.com/1200x/3e/7b/d8/3e7bd81a57f95458cc09faff35d3ce0c.jpg",
+    nombre: "Camiseta Logo",
+    img: "https://i.pinimg.com/1200x/5a/23/96/5a2396e54d4c0e6440d3271b7a6c220c.jpg",
+    precio: "$60.000",
   },
   {
     id: 2,
-    name: "T-shirt Cat",
-    color: "Negro",
-    talla: "S, M, L, XL",
-    image:
-      "https://i.pinimg.com/1200x/e5/4c/ec/e54cecdcc5439625d43c1244a2628eb4.jpg",
+    nombre: "Buzo Oversize",
+    img: "https://i.pinimg.com/736x/f5/08/e1/f508e13fd1baba0a0ba16221c0e774f1.jpg",
+    precio: "$120.000",
   },
   {
     id: 3,
-    name: "T-shirt Paw Lovers",
-    color: "Blanco",
-    talla: "XS, S, M, L",
-    image:
-      "https://i.pinimg.com/1200x/8e/30/af/8e30af96aafcc10a75f5e516f317cab3.jpg",
+    nombre: "Termo Metálico",
+    img: "https://i.pinimg.com/1200x/a1/a6/86/a1a686fa9daaca571a64b5b80a6f3ad5.jpg",
+    precio: "$45.000",
+  },
+  {
+    id: 4,
+    nombre: "Pocillo Diseño",
+    img: "https://i.pinimg.com/1200x/ad/47/3b/ad473b27f7300f4fdd29ad4040d9d81e.jpg",
+    precio: "$30.000",
+  },
+  {
+    id: 5,
+    nombre: "Camiseta Básica",
+    img: "https://i.pinimg.com/1200x/72/3e/4c/723e4c5d7a34da863d57a3c018a9d5a6.jpg",
+    precio: "$55.000",
   },
 ];
 
-const ProductCarousel: React.FC = () => {
+export default function CarruselProductos() {
   return (
-    <div className="w-full max-w-5xl mx-auto py-10">
+    <section className="max-w-7xl mx-auto px-4 py-12">
+      <h2 className="text-2xl font-bold mb-6 text-center">Productos</h2>
+
       <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={40}
-        slidesPerView={1}
-        centeredSlides
-        loop
+        modules={[Navigation]}
         navigation
-        pagination={{ clickable: true }}
-        className="w-full rounded-3xl custom-swiper"
+        spaceBetween={20}
+        slidesPerView={2}
         breakpoints={{
-          768: { slidesPerView: 3 }, // en pantallas medianas o más grandes se muestran 3
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
         }}
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.id}>
-            <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition hover:scale-105">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-40 h-40 object-contain mb-4 rounded-full border-4 "
-              />
-              <h3 className="text-lg font-bold text-gray-800 mb-1">
-                {product.name}
-              </h3>
-              <p className="text-sm text-gray-600">Color: {product.color}</p>
-              <p className="text-sm text-gray-600">Tallas: {product.talla}</p>
-              <button className="mt-4 px-6 py-2 bg-pink-500 text-white font-semibold rounded-full hover:bg-pink-600 transition">
-                Comprar ahora
-              </button>
+        {productos.map((prod) => (
+          <SwiperSlide key={prod.id}>
+            <div className="flex flex-col items-center text-center cursor-pointer group">
+              {/* Imagen del producto */}
+              <div className="relative w-48 h-60">
+                <Image
+                  src={prod.img}
+                  alt={prod.nombre}
+                  fill
+                  className="object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Nombre y precio */}
+              <p className="mt-3 text-lg font-semibold">{prod.nombre}</p>
+              <span className="text-gray-600">{prod.precio}</span>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
-};
-
-export default ProductCarousel;
+}

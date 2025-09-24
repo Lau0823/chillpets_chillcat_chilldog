@@ -56,13 +56,13 @@ export default function Navbar() {
             onSubmit={handleSearch}
             className="hidden md:flex items-center bg-white/20 rounded-full px-3 py-1"
           >
-            <FaSearch className="text-white mr-2" />
+            <FaSearch className="text-black mr-2" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder=""
-              className="bg-transparent placeholder-white text-white focus:outline-none"
+              className="bg-transparent placeholder-white text-black focus:outline-none"
             />
             <button
               type="submit"
@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* CARRITO */}
           <Link
             href="/cart"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/40 transition"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-black hover:bg-white/40 transition"
           >
             <ShoppingCart size={18} />
           </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
           {/* LOGIN */}
           <Link
             href="/login"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/40 transition"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-black hover:bg-white/40 transition"
           >
             <LogIn size={18} />
           </Link>
@@ -91,7 +91,7 @@ export default function Navbar() {
           {/* REGISTRO */}
           <Link
             href="/register"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/40 transition"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-black hover:bg-white/40 transition"
           >
             <UserPlus size={18} />
           </Link>

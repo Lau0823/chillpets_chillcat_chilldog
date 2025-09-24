@@ -1,6 +1,8 @@
 
 
 import BackgroundPets from "@/components/backgroundPets/BackgroundPets";
+import Banner from "@/components/banner/Banner";
+import BannerBlog from "@/components/bannerBlog/BannerBlog";
 import Cards from "@/components/card/Card";
 import CardXl from "@/components/cardXl/cardXl";
 import FullScreenProductCard from "@/components/FullScreenProductCard/FullScreenProductCard";
@@ -14,8 +16,8 @@ import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 export default function Home() {
   return (
     <> 
-   
-         <BackgroundPets />
+            <Banner />
+         
 
      
       <main className="min-h-screen bg-white flex items-center justify-center  ">
@@ -28,8 +30,9 @@ export default function Home() {
         <div className="md:col-span-6 mx-auto justify-items-center
 ">
         <ProductCarousel/>
-        <FullScreenProductCard/>
-          <Cards />
+          <BannerBlog />
+        
+          
         </div>
       </section></main>
 
