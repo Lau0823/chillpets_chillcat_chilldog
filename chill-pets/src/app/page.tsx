@@ -5,6 +5,8 @@ import Banner from "@/components/banner/Banner";
 import BannerBlog from "@/components/bannerBlog/BannerBlog";
 import Cards from "@/components/card/Card";
 import CardXl from "@/components/cardXl/cardXl";
+import CarruselCamisetas from "@/components/CarruselCamisetas/CarruselCamisetas";
+import CarruselPocillos from "@/components/CarruselPocillos/CarruselPocillos";
 import FullScreenProductCard from "@/components/FullScreenProductCard/FullScreenProductCard";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 
@@ -30,6 +32,8 @@ export default function Home() {
         <div className="md:col-span-6 mx-auto justify-items-center
 ">
         <ProductCarousel/>
+         <CarruselCamisetas/>
+         <CarruselPocillos/>
           <BannerBlog />
         
           

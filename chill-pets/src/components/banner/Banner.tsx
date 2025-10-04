@@ -4,38 +4,55 @@ import Image from "next/image";
 
 export default function BannerCategorias() {
   const categorias = [
-    {
-      nombre: "CAMISETAS",
-      img: "https://i.pinimg.com/1200x/90/62/66/9062664f5079f1ab73773933749f3910.jpg", 
-    },
-    {
-      nombre: "BUZOS",
-      img: "https://i.pinimg.com/1200x/2b/3c/90/2b3c90deb4a23d28f46dafd0699aab8e.jpg",
-    },
-    {
-      nombre: "TERMOS",
-      img: "https://i.pinimg.com/1200x/19/a2/09/19a20916c7ca813afbbe7a0d727e14f8.jpg",
-    },
-    {
-      nombre: "POCILLOS",
-      img: "https://i.pinimg.com/736x/0f/0b/48/0f0b487eef6d87a2e7f22caec3504598.jpg",
-    },
+    { nombre: "HOODIES", img: "/hoodie blanco.png" },
+    { nombre: "BUZOS", img: "/buzo.png" },
+    { nombre: "TERMOS", img: "/termo.png" },
+    { nombre: "POCILLOS", img: "/pocillo2.png" },
   ];
 
   return (
     <section className="w-full">
       {/* Banner principal */}
-      <div className="relative w-full h-[60vh]">
+      <div className="relative w-full h-[60vh] bg-white flex items-center justify-center">
         <Image
-          src="https://i.pinimg.com/736x/52/2e/65/522e65944a199ede5a0b830eaf27cda1.jpg"
+          src="/baner3.png"
           alt="Banner principal"
           fill
-          className="object-cover"
+          className="object-contain" // 👉 mantiene la imagen completa
+          priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-white text-4xl md:text-6xl font-bold tracking-wide">
-            NUEVA COLECCIÓN
-          </h1>
+
+        {/* Fondo extra para que no quede espacio vacío */}
+        <div className="absolute inset-0 bg-black/10"></div>
+
+        {/* Overlay con texto y botón alineados a la derecha */}
+        <div className="absolute inset-0 flex flex-col items-end justify-center text-right px-6 md:px-20">
+         <h1 className="text-black text-3xl md:text-4xl font-extrabold tracking-wide drop-shadow-lg leading-tight">
+  ¡PRESUME A <br />
+  
+  TU <br />
+  MASCOTA <br />
+   DE UNA <br />
+  MANERA <br />
+  MUY <br />
+  FASHION!
+</h1>
+
+          <p className="text-white/90 mt-3 text-lg md:text-xl max-w-xl drop-shadow">
+           
+          </p>
+
+          <button
+            className="mt-6 px-8 py-3 rounded-full 
+                       bg-pink-500/90 text-white font-semibold 
+                       shadow-[0_0_20px_4px_rgba(236,72,153,0.6)] 
+                       hover:shadow-[0_0_35px_6px_rgba(236,72,153,0.9)] 
+                       hover:scale-105 
+                       backdrop-blur-md
+                       transition-all duration-300"
+          >
+            Comprar ahora
+          </button>
         </div>
       </div>
 

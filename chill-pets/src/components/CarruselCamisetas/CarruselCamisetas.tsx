@@ -16,46 +16,46 @@ interface Producto {
 const productos: Producto[] = [
   {
     id: 1,
-    nombre: "hoodie amarillo ",
-    img: "/hoodie amarillo.png", // dentro de public/productos/
-    precio: "$160.000",
+    nombre: "Camiseta white ",
+    img: "/minie camiseta.png", // dentro de public/productos/
+    precio: "$70.000",
   },
   {
     id: 2,
-    nombre: "hoodie cream",
-    img: "/hoodie blanco.png",
-    precio: "$160.000",
+    nombre: "camiseta sam",
+    img: "/camiseta black.png",
+    precio: "$70.000",
   },
   {
     id: 3,
-    nombre: "hoodie black",
-    img: "/hoodie negro.png",
-    precio: "$160.000",
+    nombre: "camiseta rouse",
+    img: "/camiseta tau.png",
+    precio: "$70.000",
   },
   {
     id: 4,
-    nombre: "hoodie red",
-    img: "/hoodie rojo.png",
-    precio: "$160.000",
+    nombre: "camiseta red",
+    img: "/camiseta red sibi.png",
+    precio: "$70.000",
   },
   {
     id: 5,
-    nombre: "hoodie cat rose",
-    img: "/hoodie rosado.png",
-    precio: "$160.000",
+    nombre: "Camista Cat",
+    img: "/tito.png",
+    precio: "$70.000",
   },
   {
     id: 6,
-    nombre: "hoodie amarillo Mon Club Colection",
-    img: "/hoodie gris.png",
-    precio: "$160.000",
+    nombre: "t-shirt yellow",
+    img: "/yellow.png",
+    precio: "$70.000",
   },
 ];
 
 export default function CarruselProductos() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-2xl font-bold mb-6 text-center">Hoodies</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">T-shirt</h2>
 
       <Swiper
         modules={[Navigation]}

@@ -16,38 +16,38 @@ interface Producto {
 const productos: Producto[] = [
   {
     id: 1,
-    nombre: "hoodie amarillo ",
-    img: "/hoodie amarillo.png", // dentro de public/productos/
+    nombre: "buzo amarillo ",
+    img: "/buzo amarillo.png", // dentro de public/productos/
     precio: "$160.000",
   },
   {
     id: 2,
-    nombre: "hoodie cream",
-    img: "/hoodie blanco.png",
+    nombre: "buzo cream",
+    img: "/milo1.png",
     precio: "$160.000",
   },
   {
     id: 3,
-    nombre: "hoodie black",
-    img: "/hoodie negro.png",
-    precio: "$160.000",
+    nombre: "buzo black",
+    img: "/buzo negro b.png",
+    precio: "$140.000",
   },
   {
     id: 4,
-    nombre: "hoodie red",
-    img: "/hoodie rojo.png",
-    precio: "$160.000",
+    nombre: "buzo red",
+    img: "/buzo red.png",
+    precio: "$140.000",
   },
   {
     id: 5,
-    nombre: "hoodie cat rose",
-    img: "/hoodie rosado.png",
-    precio: "$160.000",
+    nombre: "buzo  rose",
+    img: "/buzo rose.png",
+    precio: "$140.000",
   },
   {
     id: 6,
-    nombre: "hoodie amarillo Mon Club Colection",
-    img: "/hoodie gris.png",
+    nombre: "buzo gray",
+    img: "/LULU.png",
     precio: "$160.000",
   },
 ];
@@ -55,7 +55,7 @@ const productos: Producto[] = [
 export default function CarruselProductos() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-2xl font-bold mb-6 text-center">Hoodies</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Buzos</h2>
 
       <Swiper
         modules={[Navigation]}

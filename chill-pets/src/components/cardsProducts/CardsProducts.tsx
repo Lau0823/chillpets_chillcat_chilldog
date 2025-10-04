@@ -4,18 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 
 const product = {
-  name: "Cama Edredon",
+  name: "Camista paca policial",
   description:
     "Cama edredón para gato o perro, brinda confort y bienestar a tu peludito.",
   price: "$120.000",
   oldPrice: 150000,
   sizes: ["S", "M", "L", "XL", "XXL"],
-  colors: [  "#24191dd0", "#ffffffff",], // morado, naranja, amarillo, rojo
+  colors: [  "#24191dd0", " #ffffffff",], // morado, naranja, amarillo, rojo
   images: [
-    "https://i.pinimg.com/1200x/54/67/05/5467057d1c63146327d325ac086dd2f3.jpg",
-    "https://i.pinimg.com/1200x/e9/94/1f/e9941fafc60547445f5d66969fe179c5.jpg",
-    "https://i.pinimg.com/1200x/17/37/2e/17372e71d75e058dcb640c9205578a14.jpg",
-    "https://i.pinimg.com/1200x/13/d5/d5/13d5d5f8ba643cf5418dcd1997e84bfc.jpg"
+    "/camiseta black.png",
+    "/camiseta minie.png",
+    "/camiseta red sibi.png",
+    "/camiseta tau.png"
   ],
 };
 

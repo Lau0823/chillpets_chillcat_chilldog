@@ -6,20 +6,18 @@ export default function BlogNewsletter() {
   return (
     <div className="w-full">
       {/* Banner superior con imagen */}
-      <div className="relative w-full h-[300px] md:h-[400px]">
+      <div className="relative w-full h-[300px] md:h-[400px] bg-black flex justify-center">
         <Image
-          src="https://i.pinimg.com/1200x/2e/08/63/2e086326c12016a8757766ac20601668.jpg" // 👉 aquí pones tu imagen
+          src="/bannerblog.png" // 👈 asegúrate que exista en public/
           alt="Blog Banner"
           fill
-          className="object-cover"
+          className="object-contain"
+          priority
         />
-        <div className="absolute inset-0 flex items-center justify-between px-6 md:px-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-pink-600">
-            CHILLPET BLOG
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-4xl md:text-6xl font-bold text-white text-center">
+            CHILLPETS BLOG
           </h2>
-          <p className="text-2xl md:text-4xl font-bold text-pink-600">
-            CONSEJOS
-          </p>
         </div>
       </div>
 
@@ -44,6 +42,3 @@ export default function BlogNewsletter() {
     </div>
   );
 }
-
-
-

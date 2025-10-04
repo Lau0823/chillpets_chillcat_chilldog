@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* Tus reglas personalizadas */
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
