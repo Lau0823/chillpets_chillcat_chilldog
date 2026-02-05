@@ -4,10 +4,10 @@ const nextConfig = {
     domains: [
       "placedog.net",
       "placekitten.com",
-      "co.pinterest.com",
-      "i.pinimg.com", // 👈 este es el importante para las imágenes directas de Pinterest
+      "i.pinimg.com",
+      "images.unsplash.com",
     ],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

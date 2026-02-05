@@ -23,3 +23,13 @@
 .custom-swiper .swiper-button-prev:hover {
   color: #db2777; /* Tailwind pink-600 */
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}

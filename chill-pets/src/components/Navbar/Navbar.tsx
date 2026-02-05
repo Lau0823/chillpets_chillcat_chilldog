@@ -21,18 +21,20 @@ export default function Navbar() {
           {/* LOGO */}
           <Link href="/" className="flex items-center">
             <img
-              src="/logo (3).png"
+              src="/bs.png"
               alt="ChillPets Logo"
-              className="h-16 w-auto cursor-pointer"
+              className="h-32"
             />
           </Link>
 
           {/* MENÚ pegado al logo con subrayado animado */}
           <ul className="flex space-x-6 text-lg font-medium text-black">
             {[
-              { href: "/perros", label: "Perros" },
-              { href: "/gato", label: "Gatos" },
-              { href: "/promociones", label: "Promociones" },
+              { href: "/lonuevo", label: "Lo nuevo" },
+              { href: "/camisetas", label: "Camisetas" },
+              { href: "/hoodies", label: "Hoodies" },
+              { href: "/gorras", label: "Gorras" },
+              { href: "/buzos", label: "Buzos" },
               { href: "/blog", label: "Blog" },
             ].map((item) => (
               <li key={item.href}>

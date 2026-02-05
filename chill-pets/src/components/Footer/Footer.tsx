@@ -7,10 +7,9 @@ export default function Footer() {
         
         {/* Columna 1: Logo + Descripción + Redes */}
         <div>
-          <h2 className="text-white font-bold text-xl mb-4">CHILL PETS</h2>
+          <h2 className="text-white font-bold text-xl mb-4">Black Sheep</h2>
           <p className="text-sm mb-4">
-            Productos de calidad para perros y gatos. 
-            Todo lo que necesitas para consentir a tu mejor amigo.
+         Los mejores prodcutos street style.
           </p>
           <div className="flex gap-4 text-lg">
             <a href="#" className="hover:text-white"><FaFacebookF /></a>
@@ -24,11 +23,11 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Enlaces rápidos</h3>
           <ul className="space-y-2 text-sm">
-  <li><a href="#" className="hover:text-white">Inicio</a></li>
-  <li><a href="#" className="hover:text-white">Perros</a></li>
-  <li><a href="#" className="hover:text-white">Gatos</a></li>
-  <li><a href="#" className="hover:text-white">Promociones </a> </li>
-  <li><a href="#" className="hover:text-white">Blog </a> </li>
+  <li><a href="#" className="hover:text-white">Lo nuevo</a></li>
+  <li><a href="#" className="hover:text-white">Camistas</a></li>
+  <li><a href="#" className="hover:text-white">Hoodies</a></li>
+  <li><a href="#" className="hover:text-white">Gorras </a> </li>
+  <li><a href="#" className="hover:text-white">Buzos</a> </li>
 </ul>
 
         </div>
@@ -38,7 +37,7 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">Contacto</h3>
          
           <p className="text-sm">Bogotá, Colombia</p>
-          <p className="text-sm mt-2">email@chillpets.com</p>
+          <p className="text-sm mt-2">email@blacksheeps.com</p>
           <p className="text-sm">+57 310 2345742 </p>
         </div>
       </div>

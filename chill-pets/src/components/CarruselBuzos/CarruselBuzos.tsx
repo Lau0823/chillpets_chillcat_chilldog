@@ -6,9 +6,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import { ShoppingCart, Eye } from "lucide-react";
-import { useCart } from "@/app/context/CartContext";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { useCart } from "@/app/context/CartContext";
 
 interface Producto {
   id: number;
@@ -18,28 +17,20 @@ interface Producto {
 }
 
 const productos: Producto[] = [
-  { id: 1, nombre: "Camiseta White", img: "/minie camiseta.png", precio: 140000 },
-  { id: 2, nombre: "Camiseta Sam", img: "/camiseta black.png", precio: 140000 },
-  { id: 3, nombre: "Camiseta Rouse", img: "/camiseta tau.png", precio: 140000 },
-  { id: 4, nombre: "Camiseta Red", img: "/camiseta red sibi.png", precio: 140000 },
-  { id: 5, nombre: "Camiseta Cat", img: "/tito.png", precio: 140000 },
-  { id: 6, nombre: "T-shirt Yellow", img: "/yellow.png", precio: 1400000 },
+  { id: 1, nombre: "Buzo Amarillo", img: "/buzo amarillo.png", precio: 160000 },
+  { id: 2, nombre: "Buzo Cream", img: "/milo1.png", precio: 160000 },
+  { id: 3, nombre: "Buzo Black", img: "/buzo negro b.png", precio: 160000 },
+  { id: 4, nombre: "Buzo Red", img: "/buzo red.png", precio: 160000 },
+  { id: 5, nombre: "Buzo Rose", img: "/buzo rose.png", precio: 160000 },
+  { id: 6, nombre: "Buzo Gray", img: "/LULU.png", precio: 160000 },
 ];
 
-export default function CarruselCamisetas() {
+export default function CarruselBuzos() {
   const { addToCart } = useCart();
-  const router = useRouter();
-
-  const handleVerProducto = (prod: Producto) => {
-    // 👇 redirige a la página general de camisetas
-    router.push("/camisetas");
-  };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12 bg-[#ffffff33] rounded-2xl backdrop-blur-sm">
-      <h2 className="text-3xl font-bold mb-8 text-center text-white tracking-wider">
-        T-Shirts
-      </h2>
+    <section className="max-w-7xl mx-auto px-4 py-12">
+      <h2 className="text-2xl font-bold mb-6 text-center text-white">Buzos</h2>
 
       <Swiper
         modules={[Navigation]}
@@ -58,11 +49,7 @@ export default function CarruselCamisetas() {
               whileHover={{ scale: 1.03 }}
               className="relative flex flex-col items-center text-center group"
             >
-              {/* Imagen del producto */}
-              <div
-                onClick={() => handleVerProducto(prod)}
-                className="relative w-56 h-72 overflow-hidden rounded-2xl cursor-pointer"
-              >
+              <div className="relative w-56 h-72 overflow-hidden rounded-2xl">
                 <Image
                   src={prod.img}
                   alt={prod.nombre}
@@ -73,10 +60,9 @@ export default function CarruselCamisetas() {
                 {/* Botones tipo vidrio */}
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleVerProducto(prod);
-                    }}
+                    onClick={() =>
+                      alert(`👀 Ver producto: ${prod.nombre}`)
+                    }
                     className="p-3 rounded-full bg-white/25 backdrop-blur-lg border border-white/40 hover:bg-white/40 transition-all duration-300"
                     title="Ver producto"
                   >
@@ -84,16 +70,15 @@ export default function CarruselCamisetas() {
                   </button>
 
                   <button
-                    onClick={(e) => {
-                      e.stopPropagation();
+                    onClick={() =>
                       addToCart({
                         id: prod.id,
                         name: prod.nombre,
                         price: prod.precio,
                         image: prod.img,
                         quantity: 1,
-                      });
-                    }}
+                      })
+                    }
                     className="p-3 rounded-full bg-white/25 backdrop-blur-lg border border-white/40 hover:bg-white/40 transition-all duration-300"
                     title="Agregar al carrito"
                   >
@@ -102,7 +87,6 @@ export default function CarruselCamisetas() {
                 </div>
               </div>
 
-              {/* Info producto */}
               <p className="mt-3 text-lg font-semibold text-white">{prod.nombre}</p>
               <span className="text-gray-400">${prod.precio.toLocaleString()}</span>
             </motion.div>
@@ -112,4 +96,3 @@ export default function CarruselCamisetas() {
     </section>
   );
 }
-
